@@ -7,6 +7,7 @@ let itemsArray = localStorage.getItem("items")
 form.addEventListener("submit", addItem);
 itemList.addEventListener("click", removeItem);
 filter.addEventListener("keyup", filterItems);
+
 let filteredItems = [];
 
 const createLiElement = (element) => {
@@ -90,7 +91,7 @@ const listingUp = (e) => {
 const selectThis = (e) => {
   let selectedItem = e.target.innerText.slice(0, e.target.innerText.length - 1);
   filter.value = selectedItem;
-  var li = document.createElement("li");
+  /* var li = document.createElement("li");
   li.className = "list-group-item";
   li.appendChild(
     document.createTextNode(
@@ -100,8 +101,9 @@ const selectThis = (e) => {
   var deleteBtn = document.createElement("button");
   deleteBtn.className = "btn btn-danger btn-sm float-right delete";
   deleteBtn.appendChild(document.createTextNode("X"));
-  li.appendChild(deleteBtn);
-  itemList.replaceChildren(li);
+  li.appendChild(deleteBtn); */
+
+  //itemList.replaceChildren(e.target);
 };
 
 const selectThisOnEnter = (e) => {

@@ -1,0 +1,59 @@
+.container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin: auto;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+  border: 2px solid black;
+  position: relative;
+}
+.inside-box {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.x {
+  position: absolute;
+  top: -40px;
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: red;
+  color: white;
+}
+.plus {
+  display: inline-block;
+  color: white;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  border: 1px solid black;
+  background-color: rgb(75, 85, 85);
+  font-size: 3rem;
+  text-align: center;
+  margin: 1%;
+}
+.message {
+  position: absolute;
+  color: red;
+  top: 35px;
+}
+
+.res {
+  margin: auto;
+  width: 50%;
+  font-size: 2rem;
+  color: green;
+  text-align: center;
+}
