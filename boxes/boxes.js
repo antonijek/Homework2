@@ -6,12 +6,12 @@ const createBox = () => {
   input.addEventListener("keyup", isValid);
   input.addEventListener("keyup", isPalindrom);
   input.setAttribute("maxlength", 1);
-  let p = document.createElement("p");
-  p.innerHTML = "X";
-  p.className = "x";
-  p.addEventListener("click", deleteBox);
+  let button = document.createElement("button");
+  button.innerHTML = "X";
+  button.className = "x";
+  button.addEventListener("click", deleteBox);
   box.appendChild(input);
-  box.appendChild(p);
+  box.appendChild(button);
   document.querySelector(".container").appendChild(box);
   let message = document.createElement("p");
   message.innerHTML = "";
@@ -27,6 +27,7 @@ const boxes = () => {
 const addOneMore = () => {
   inputNumber.value = Number(inputNumber.value) + 1;
   createBox();
+  isPalindrom();
 };
 
 const deleteBox = (e) => {
@@ -48,12 +49,12 @@ const isPalindrom = () => {
   let word = arr.map((item) => item.value);
   for (let i = 0; i < word.length; i++) {
     if (word[i] !== word[word.length - 1 - i]) {
-      result.innerHTML = "Nije plindrom";
+      result.innerHTML = "Nije palindrom!";
       result.style.color = "red";
       return false;
     }
   }
-  result.innerHTML = "Jeste plindrom!!!";
+  result.innerHTML = "Jeste palindrom!!!";
   result.style.color = "green";
   return true;
 };

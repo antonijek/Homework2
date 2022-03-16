@@ -1,0 +1,65 @@
+body {
+  width: 50vw;
+  height: 100vh;
+  background-color: white;
+  margin: auto;
+}
+header {
+  background-color: rgb(126, 124, 146);
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+ul {
+  margin-left: 20%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+  justify-items: center;
+}
+li {
+  display: inline-block;
+  width: 14vw;
+  padding: 15px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(57, 145, 196);
+
+  border: 1px solid black;
+  margin: 0;
+}
+a:hover {
+  background-color: rgb(23, 104, 180);
+}
+.btn {
+  width: 60%;
+  display: none;
+  justify-content: space-between;
+  margin: auto;
+}
+.btn button {
+  padding: 3%;
+}
+.clock {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+}
+.start {
+  background-color: green;
+}
+.stop {
+  background-color: red;
+}
+.reset {
+  background-color: antiquewhite;
+}
