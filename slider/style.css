@@ -5,12 +5,14 @@
 }
 
 .carousel-container {
+    /* display: block; */
     width: 39%;
     top: 20vh;
     margin: auto;
     overflow: hidden;
     border: 5px solid #111;
     position: relative;
+    /* cursor: pointer; */
 }
 
 .carousel-slide {
@@ -48,3 +50,4 @@
     color: #FFF;
     cursor: pointer;
 }
+
