@@ -38,4 +38,3 @@ carouselSlide.addEventListener('transitionend', ()=>{
         carouselSlide.style.transition = "translateX(" + (-size * counter ) + 'px)';
     }
 });
-
