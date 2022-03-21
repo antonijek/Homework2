@@ -4,12 +4,7 @@ body {
   background-color: white;
   margin: auto;
 }
-header {
-  background-color: rgb(126, 124, 146);
-  margin: 0;
-  padding: 0;
-  box-sizing: content-box;
-}
+
 ul {
   margin-left: 20%;
   list-style: none;
@@ -57,9 +52,18 @@ a:hover {
 .start {
   background-color: green;
 }
+.start:hover {
+  transform: scale(1.2);
+}
 .stop {
   background-color: red;
 }
+.stop:hover {
+  transform: scale(1.2);
+}
 .reset {
   background-color: antiquewhite;
+}
+.reset:hover {
+  transform: scale(1.2);
 }
