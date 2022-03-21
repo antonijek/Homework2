@@ -4,38 +4,28 @@ body {
   background-color: white;
   margin: auto;
 }
-header {
-  background-color: rgb(126, 124, 146);
-  margin: 0;
-  padding: 0;
-  box-sizing: content-box;
-}
-ul {
-  margin-left: 20%;
+
+.header {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 2%;
   height: 5vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-content: center;
   justify-items: center;
 }
-li {
+.header button {
   display: inline-block;
-  width: 14vw;
-  padding: 15px;
-  text-align: center;
-}
-a {
-  text-decoration: none;
-  color: white;
-  background-color: rgb(57, 145, 196);
-
-  border: 1px solid black;
+  width: 16vw;
+  padding: 5% 0;
   margin: 0;
+  text-align: center;
+  background-color: rgb(57, 145, 196);
+  color: white;
 }
-a:hover {
+
+.header button:hover {
   background-color: rgb(23, 104, 180);
 }
 .btn {
@@ -56,10 +46,21 @@ a:hover {
 }
 .start {
   background-color: green;
+  color: white;
+}
+.start:hover {
+  transform: scale(1.2);
 }
 .stop {
   background-color: red;
+  color: white;
+}
+.stop:hover {
+  transform: scale(1.2);
 }
 .reset {
   background-color: antiquewhite;
+}
+.reset:hover {
+  transform: scale(1.2);
 }

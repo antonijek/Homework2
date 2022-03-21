@@ -51,6 +51,9 @@ body {
   text-align: center;
   margin: 1%;
 }
+.plus:hover {
+  transform: scale(1.2);
+}
 .message {
   position: absolute;
   color: red;
