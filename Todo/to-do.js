@@ -29,7 +29,16 @@ function addItem(e) {
 }
 
 function removeItem(e) {
-  console.log(e.target.classList);
+  let newArray = itemsArray.filter(
+    (item) =>
+      item !==
+      e.target.parentElement.innerText.slice(
+        0,
+        e.target.parentElement.innerText.length - 2
+      )
+  );
+  itemsArray = newArray;
+  localStorage.setItem("items", JSON.stringify(itemsArray));
   if (e.target.classList.contains("delete")) {
     if (confirm("Are you sure?")) {
       var li = e.target.parentElement;
@@ -43,11 +52,8 @@ function filterItems(e) {
   let inputValue = e.target.value.toLowerCase();
   let allItems = Array.from(itemList.children);
   allItems.map((item) => {
-    item.addEventListener("click", selectThis);
-    if (
-      item.innerText.toLowerCase().indexOf(inputValue) < 0 ||
-      item.innerText.toLowerCase().indexOf(inputValue) > 0
-    ) {
+    item.addEventListener("click", selectItem);
+    if (item.innerText.toLowerCase().indexOf(inputValue) !== 0) {
       item.style.display = "none";
     } else {
       item.style.display = "block";
@@ -88,25 +94,19 @@ const listingUp = (e) => {
     filteredItems[index].style.backgroundColor = "gray";
   }
 };
-const selectThis = (e) => {
+const selectItem = (e) => {
   let selectedItem = e.target.innerText.slice(0, e.target.innerText.length - 1);
   filter.value = selectedItem;
-  /* var li = document.createElement("li");
-  li.className = "list-group-item";
-  li.appendChild(
-    document.createTextNode(
-      e.target.innerText.slice(0, e.target.innerText.length - 1)
-    )
+  let array = Array.from(itemList.children);
+  array.map((item) =>
+    item.innerText.slice(0, item.innerText.length - 1) ===
+    e.target.innerText.slice(0, item.innerText.length - 1)
+      ? (item.style.display = "block")
+      : (item.style.display = "none")
   );
-  var deleteBtn = document.createElement("button");
-  deleteBtn.className = "btn btn-danger btn-sm float-right delete";
-  deleteBtn.appendChild(document.createTextNode("X"));
-  li.appendChild(deleteBtn); */
-
-  //itemList.replaceChildren(e.target);
 };
 
-const selectThisOnEnter = (e) => {
+const selectItemOnEnter = (e) => {
   if (e.key === "Enter") {
     let text = filteredItems[index].innerText.slice(
       0,
@@ -116,7 +116,7 @@ const selectThisOnEnter = (e) => {
     filterItems(e);
   }
 };
-document.addEventListener("keyup", selectThisOnEnter);
+document.addEventListener("keyup", selectItemOnEnter);
 document.addEventListener("keydown", listingDown);
 document.addEventListener("keydown", listingUp);
 itemsArray.map((item) => {
