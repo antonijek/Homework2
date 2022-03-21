@@ -6,30 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+    
+
     <link rel="stylesheet" href="style.css">
     <title>Slider</title>
 </head>
-<body>
+<body id="body">
     
+    <button id="exitBtn" class="hide">X</button>
+
+    <i class="fa-solid fa-arrow-left-long" id="prevBtn"></i>
+    <i class="fa-solid fa-arrow-right-long" id="nextBtn"></i>
+
     <div class="carousel-container" id="open">
 
-        <i class="fa-solid fa-arrow-left-long" id="prevBtn"></i>
-        <i class="fa-solid fa-arrow-right-long" id="nextBtn"></i>
+        <!-- <i class="fa-solid fa-arrow-left-long" id="prevBtn"></i>
+        <i class="fa-solid fa-arrow-right-long" id="nextBtn"></i> -->
 
         <div class="carousel-slide">
-            <img src="./img/photo5.jpg" id="lastClone" alt="photo5">
-            <img src="./img/photo1.jpg" alt="photo1">
-            <img src="./img/photo2.jpg" alt="photo2">
-            <img src="./img/photo3.jpg" alt="photo3">
-            <img src="./img/photo4.jpg" alt="photo4">
-            <img src="./img/photo5.jpg" alt="photo5">
-            <img src="./img/photo1.jpg" id="firstClone" alt="photo1">
+            <img src="./img/photo5.jpg" class="image" id="lastClone" alt="photo5">
+            <img src="./img/photo1.jpg" class="image" alt="photo1">
+            <img src="./img/photo2.jpg" class="image" alt="photo2">
+            <img src="./img/photo3.jpg" class="image" alt="photo3">
+            <img src="./img/photo4.jpg" class="image" alt="photo4">
+            <img src="./img/photo5.jpg" class="image" alt="photo5">
+            <img src="./img/photo1.jpg" class="image" id="firstClone" alt="photo1">
         </div>
+
     </div>
 
 
     <script src="script.js"></script>
+    
 </body>
 </html>

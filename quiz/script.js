@@ -9,6 +9,7 @@ const answerButtonsElement = document.getElementById('answer-buttons');
 let shuffledQuestions;
 let currentQuestionIndex;
 
+
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
@@ -34,10 +35,12 @@ function showQuestion(question) {
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
+
         button.classList.add('btn')
         if(answer.correct) {
             button.dataset.correct = answer.correct
         }
+
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
     })
@@ -58,6 +61,7 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
@@ -69,9 +73,9 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
-        element.classList.add('correct')
+        element.classList.add('correct') 
     } else {
-        element.classList.add('wrong')    
+        element.classList.add('wrong')
     }
 }
 
@@ -80,28 +84,97 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
+
+
 const questions = [
     {
-        question: 'What is 2+2 ?',
+        question: "Grand Central Terminal, Park Avenue, New York is the world's ?",
         answers: [
-            { text: '4', correct: true },
-            { text: '44', correct: true },
-            { text: '67', correct: false },
-            { text: '29', correct: false }
+            { text: "A: largest railway station", correct: true },
+            { text: "B: highest railway station", correct: false },
+            { text: 'C: longest railway station', correct: false },
+            { text: "D: None of the above", correct: false }
         ]
     },
     {
-        question: 'What is 3+3 ?',
+        question: "Entomology is the science that studies ?",
         answers: [
-            { text: '6', correct: true },
-            { text: '52', correct: false }
+            { text: "A: Behavior of human beings", correct: false },
+            { text: "B: Insects", correct: true },
+            { text: "C: The origin and history of technical and scientific terms", correct: false },
+            { text: "D: The formation of rocks", correct: false }
         ]
     },
     {
-        question: 'What is 5+5 ?',
+        question: "Eritrea, which became the 182nd member of the UN in 1993, is in the continent of ?",
         answers: [
-            { text: '10', correct: true },
-            { text: '11', correct: false }
+            { text: "A: Asia", correct: false },
+            { text: "B: Africa", correct: true },
+            { text: 'C: Europe', correct: false },
+            { text: "D: Australia", correct: false }
+        ]
+    },
+    {
+        question: "Garampani sanctuary is located at ?",
+        answers: [
+            { text: "A: Junagarh, Gujarat", correct: true },
+            { text: "B: Diphu, Assam", correct: false },
+            { text: 'C: Kohima, Nagaland', correct: false },
+            { text: "D: Gangtok, Sikkime", correct: false }
+        ]
+    },
+    {
+        question: "For which of the following disciplines is Nobel Prize awarded?",
+        answers: [
+            { text: "A: Physics and Chemistry", correct: false },
+            { text: "B: Physiology or Medicine", correct: false },
+            { text: 'C: Literature, Peace and Economics', correct: true },
+            { text: "D: All of the above", correct: false }
+        ]
+    },
+    {
+        question: "Hitler party which came into power in 1933 is known as ?",
+        answers: [
+            { text: "A: Labour Party", correct: false },
+            { text: "B: Nazi Party", correct: true },
+            { text: 'C: Ku-Klux-Klan', correct: false },
+            { text: "D: Democratic Party", correct: false }
+        ]
+    },
+    {
+        question: "Galileo was an Italian astronomer who ?",
+        answers: [
+            { text: "A: developed the telescope", correct: false },
+            { text: "B: discovered four satellites of Jupiter", correct: false },
+            { text: 'C: discovered that the movement of pendulum produces a regular time measurement', correct: false },
+            { text: "D: All of the above", correct: true }
+        ]
+    },
+    {
+        question: "Fire temple is the place of worship of which of the following religion? ?",
+        answers: [
+            { text: "A: Taoism", correct: false },
+            { text: "B: Judaism", correct: false },
+            { text: 'C: Zoroastrianism (Parsi Religion)', correct: true },
+            { text: "D: Shintoism", correct: false }
+        ]
+    },
+    {
+        question: "Film and TV institute of India is located at ?",
+        answers: [
+            { text: "A: Pune (Maharashtra)", correct: true },
+            { text: "B: Rajkot (Gujarat)", correct: false },
+            { text: 'C: Pimpri (Maharashtra)', correct: true },
+            { text: "D: Perambur (Tamilnadu)", correct: false }
+        ]
+    },
+    {
+        question: "During World War II, when did Germany attack France?",
+        answers: [
+            { text: "A: 1940", correct: true },
+            { text: "B: 1941", correct: false },
+            { text: "C: 1942", correct: false },
+            { text: "D: 1943", correct: false }
         ]
     }
 
