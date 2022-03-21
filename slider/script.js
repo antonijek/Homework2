@@ -38,3 +38,12 @@ carouselSlide.addEventListener('transitionend', ()=>{
         carouselSlide.style.transition = "translateX(" + (-size * counter ) + 'px)';
     }
 });
+
+const open = document.getElementById('open');
+const carousel_container = document.getElementsByClassName('carousel-containerr');
+// const close document.getElementById('close')
+
+open.addEventListener('click', () => {
+    carousel_container.classList.add('hide');
+    
+})
