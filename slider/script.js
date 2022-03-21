@@ -39,11 +39,36 @@ carouselSlide.addEventListener('transitionend', ()=>{
     }
 });
 
-const open = document.getElementById('open');
-const carousel_container = document.getElementsByClassName('carousel-containerr');
-// const close document.getElementById('close')
+var open = document.getElementById('open');
+var closeBtn = document.getElementById('exitBtn');
+var body = document.getElementById('body')
 
 open.addEventListener('click', () => {
-    carousel_container.classList.add('hide');
     
+    document.querySelector(".carousel-container").style.width='90vw';
+    document.querySelector(".carousel-container").style.height='90vh';
+    document.querySelector(".carousel-container").style.top='2vw';
+    prevBtn.style.left='7%';
+    nextBtn.style.right='7%';
+    prevBtn.style.color='#FFF'
+    nextBtn.style.color='#FFF'
+    body.style.backgroundColor = "rgb(52, 57, 63)";
+    document.getElementById('exitBtn').classList.remove("hide");
+
 })
+
+closeBtn.addEventListener('click', () => {
+
+    document.querySelector(".carousel-container").style.width='39%';
+    document.querySelector(".carousel-container").style.height='60vh';
+    document.querySelector(".carousel-container").style.top='10vw';
+    document.getElementById('exitBtn').classList.add("hide");
+    prevBtn.style.left='25%';
+    nextBtn.style.right='25%';
+    prevBtn.style.color='#111'
+    nextBtn.style.color='#111'
+    body.style.backgroundColor = "rgb(191, 206, 219)";
+
+})
+
+
